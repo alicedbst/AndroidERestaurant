@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidERestaurant</string>
+    <string name="bienvenue">Bienvenue</string>
+    <string name="chez">chez</string>
+    <string name="resto_name">Droid Resto</string>
+
+    <string name="entrée">Entrée</string>
+    <string name="plat">Plat</string>
+    <string name="dessert">Dessert</string>
+
+</resources>

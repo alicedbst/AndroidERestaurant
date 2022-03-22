@@ -4,10 +4,17 @@
     <string name="chez">chez</string>
     <string name="resto_name">Droid Resto</string>
 
-    <string name="entrée">Entrée</string>
-    <string name="plat">Plat</string>
-    <string name="dessert">Dessert</string>
+    <string name="entrée">Entrées</string>
+    <string name="plat">Plats</string>
+    <string name="dessert">Desserts</string>
 
     <string name="catégorie">Catégorie</string>
+
+    <string-array name="Plats">
+        <item>Pâte carbo</item>
+        <item>Pâte bolo</item>
+        <item>Pâte carbo</item>
+        <item>Pâte bolo</item>
+    </string-array>
 
 </resources>

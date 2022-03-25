@@ -22,4 +22,5 @@
     <string name="plus">+</string>
     <string name="moins">-</string>
     <string name="ajoue">Ajouter au panier</string>
+    <string name="zero">0</string>
 </resources>

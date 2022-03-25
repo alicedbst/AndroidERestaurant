@@ -9,6 +9,7 @@ import fr.isen.dubost.androiderestaurant.model.Item
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     lateinit var item: Item
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -24,15 +25,22 @@ class DetailActivity : AppCompatActivity() {
 
         binding.detailIngredient.text = item.ingredients.joinToString { it.name_fr }
 
-        /*var moinscnt = 0
-        setContentView(R.layout.activity_detail)
+
+        var cnt = 0
+        binding.detailQuantity.text = cnt.toString()
         binding.buttonMoins.setOnClickListener {
-            moinscnt--
+            cnt--
+            if(cnt <= 0)
+                cnt = 0
+            binding.detailQuantity.text = cnt.toString()
         }
-        var pluscnt = 0
          binding.buttonPlus.setOnClickListener {
-             pluscnt++
-        }*/
+             cnt++
+             binding.detailQuantity.text = cnt.toString()
+        }
+        binding.buttonAjouter.setOnClickListener {
+
+        }
 
 
         var actionBar = supportActionBar

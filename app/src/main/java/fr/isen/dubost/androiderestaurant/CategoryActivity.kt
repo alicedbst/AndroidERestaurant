@@ -16,6 +16,7 @@ import fr.isen.dubost.androiderestaurant.databinding.ActivityCategoryBinding
 import fr.isen.dubost.androiderestaurant.databinding.ActivityHomeBinding
 import fr.isen.dubost.androiderestaurant.model.DataResult
 import org.json.JSONObject
+import java.util.Arrays.toString
 
 class CategoryActivity : AppCompatActivity() {
 
@@ -28,7 +29,7 @@ class CategoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val categoryTitle = intent.getStringExtra("category") ?: ""
-        binding.titreCategorie.text = categoryTitle
+        //binding.titreCategorie.text = categoryTitle
 
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
@@ -37,6 +38,12 @@ class CategoryActivity : AppCompatActivity() {
         }
 
         loadDataFromServerByCategory(categoryTitle)
+
+        var actionBar = supportActionBar
+        actionBar!!.title = categoryTitle
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
+
     }
 
     companion object {
@@ -56,6 +63,7 @@ class CategoryActivity : AppCompatActivity() {
 
                 val items =
                     dataResult.data.firstOrNull { it.name_fr == category }?.items ?: arrayListOf()
+                Log.d("CategoryActivity", dataResult.toString())
                 binding.recyclerView.adapter = CategoryAdapter(items) {
                     val intent = Intent(this, DetailActivity::class.java)
                     intent.putExtra(ITEM_KEY, it)

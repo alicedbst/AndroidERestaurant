@@ -9,8 +9,8 @@
     <TextView
         android:id="@+id/detailTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="20dp"
         android:autoText="false"
         android:bufferType="normal"
         android:text="TextView"
@@ -18,5 +18,64 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailSlider" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/detailSlider"
+        android:layout_width="407dp"
+        android:layout_height="368dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAjouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/ajoue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
+
+    <Button
+        android:id="@+id/buttonMoins"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#2E2C2B"
+        android:text="@string/moins"
+        app:layout_constraintStart_toStartOf="@+id/buttonAjouter"
+        app:layout_constraintTop_toBottomOf="@+id/detailIngredient" />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#2E2C2B"
+        android:text="@string/plus"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAjouter"
+        app:layout_constraintTop_toTopOf="@+id/buttonMoins" />
+
+    <TextView
+        android:id="@+id/detailIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailTitle" />
+
+    <TextView
+        android:id="@+id/detailQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlus"
+        app:layout_constraintStart_toEndOf="@+id/buttonMoins"
+        app:layout_constraintTop_toBottomOf="@+id/detailIngredient" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

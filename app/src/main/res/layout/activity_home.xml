@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/textViewBienvenue"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/bienvenue"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
     <Button
         android:id="@+id/entree"
         android:layout_width="wrap_content"
@@ -47,36 +37,13 @@
         app:layout_constraintTop_toBottomOf="@+id/plat" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="77dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:id="@+id/imageView5"
+        android:layout_width="240dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/noodles" />
-
-    <TextView
-        android:id="@+id/textViewResto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/resto_name"
-        android:textSize="14sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textViewChez"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/chez"
-        app:layout_constraintBottom_toTopOf="@+id/textViewResto"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBienvenue" />
+        app:srcCompat="@drawable/droidresto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

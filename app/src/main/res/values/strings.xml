@@ -10,12 +10,11 @@
     <string name="ble">Bluetooth</string>
 
     <string name="catégorie">Catégorie</string>
+    <string name="read">Lecture</string>
+    <string name="write">Ecriture</string>
 
     <string-array name="Plats">
-        <item>Pâte carbo</item>
-        <item>Pâte bolo</item>
-        <item>Pâte carbo</item>
-        <item>Pâte bolo</item>
+
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

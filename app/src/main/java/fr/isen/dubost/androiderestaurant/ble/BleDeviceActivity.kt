@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.bluetooth.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.dubost.androiderestaurant.R
 import fr.isen.dubost.androiderestaurant.databinding.ActivityBleDeviceBinding
 import fr.isen.dubost.androiderestaurant.databinding.ActivityDetailBinding
@@ -37,6 +38,12 @@ class BleDeviceActivity : AppCompatActivity() {
 
             override fun onServicesDiscovered(gatt: BluetoothGatt?, status: Int) {
                 super.onServicesDiscovered(gatt, status)
+                val bleService= gatt?.services?.map { BleService(it.uuid.toString(), it.characteristics) } ?: arrayListOf()
+                val adapter= BleServiceAdapter(bleService)
+                runOnUiThread {
+                    binding.serviceList.layoutManager = LinearLayoutManager(this@BleDeviceActivity)
+                    binding.serviceList.adapter = adapter
+                }
             }
 
             override fun onCharacteristicRead(

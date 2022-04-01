@@ -82,7 +82,7 @@ class BleAdapter(private val bleliste: ArrayList<ScanResult>,val clickListener :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val View = LayoutInflater.from(parent.context).inflate(R.layout.item_ble, parent, false)
+        val View = LayoutInflater.from(parent.context).inflate(R.layout.item_ble_scan, parent, false)
         return ViewHolder(View)
     }
 }

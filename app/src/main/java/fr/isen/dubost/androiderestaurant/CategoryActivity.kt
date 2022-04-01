@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -41,7 +43,7 @@ class CategoryActivity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar!!.title = categoryTitle
-        actionBar.setDisplayHomeAsUpEnabled(true)
+        //actionBar.setDisplayHomeAsUpEnabled(true)
 
 
     }
@@ -76,4 +78,14 @@ class CategoryActivity : AppCompatActivity() {
         Volley.newRequestQueue(this).add(request)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val intent = Intent(this, CartActivity::class.java)
+        startActivity(intent)
+        return super.onOptionsItemSelected(item)
+    }
 }

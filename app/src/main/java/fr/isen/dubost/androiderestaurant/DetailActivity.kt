@@ -2,6 +2,7 @@ package fr.isen.dubost.androiderestaurant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Button
 import fr.isen.dubost.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.dubost.androiderestaurant.model.Item
@@ -32,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
             cnt--
             if(cnt <= 0)
                 cnt = 0
-            binding.detailQuantity.text = cnt.toString()
+             binding.detailQuantity.text = cnt.toString()
         }
          binding.buttonPlus.setOnClickListener {
              cnt++
@@ -45,6 +46,11 @@ class DetailActivity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar!!.title = item.name_fr
-        actionBar.setDisplayHomeAsUpEnabled(true)
+        //actionBar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
     }
 }

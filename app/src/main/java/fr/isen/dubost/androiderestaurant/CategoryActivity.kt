@@ -31,7 +31,7 @@ class CategoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val categoryTitle = intent.getStringExtra("category") ?: ""
-        //binding.titreCategorie.text = categoryTitle
+
 
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)

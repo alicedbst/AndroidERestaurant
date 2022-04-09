@@ -22,7 +22,7 @@
     <string name="plus">+</string>
     <string name="moins">-</string>
     <string name="ajoue">Ajouter au panier</string>
-    <string name="zero">0</string>
+
 
     <string name="ble_scan_play">Lancer le scan</string>
     <string name="ble_scan_pause">Scan BLE en cours …</string>

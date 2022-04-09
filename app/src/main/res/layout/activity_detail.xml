@@ -10,20 +10,21 @@
         android:id="@+id/detailTitle"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginTop="20dp"
-        android:autoText="false"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/green"
         android:bufferType="normal"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailSlider" />
+        app:layout_constraintTop_toBottomOf="@+id/detailSlider"
+        tools:text="Titre plat" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/detailSlider"
-        android:layout_width="407dp"
-        android:layout_height="368dp"
+        android:layout_width="404dp"
+        android:layout_height="336dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +43,7 @@
         android:id="@+id/buttonMoins"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#2E2C2B"
         android:text="@string/moins"
         app:layout_constraintStart_toStartOf="@+id/buttonAjouter"
@@ -62,23 +63,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="100dp"
         android:text="TextView"
+        android:textColor="@color/brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/detailSlider"
+        tools:text="detail ingredient" />
 
     <TextView
         android:id="@+id/detailQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold"
+        android:textColor="@color/brown"
         app:layout_constraintEnd_toStartOf="@+id/buttonPlus"
         app:layout_constraintStart_toEndOf="@+id/buttonMoins"
-        app:layout_constraintTop_toBottomOf="@+id/detailIngredient"
-        tools:text="@string/zero" />
+        app:layout_constraintTop_toBottomOf="@+id/detailIngredient"/>
+
+    <TextView
+        android:id="@+id/detailTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textColor="@color/brown"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAjouter"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPlus"
+        app:layout_constraintStart_toStartOf="@+id/buttonMoins"
+        app:layout_constraintTop_toBottomOf="@+id/detailQuantity"
+        tools:text="Total = " />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

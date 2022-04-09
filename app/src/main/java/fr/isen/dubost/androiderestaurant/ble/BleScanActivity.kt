@@ -44,7 +44,7 @@ class BleScanActivity : AppCompatActivity() {
         }
 
         title = "Bluetooth";
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeButtonEnabled(true)
         swipeContainer = findViewById(R.id.swipeContainer)
         when{

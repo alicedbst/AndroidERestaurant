@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.35187072753906257" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35769500732421877" />
         <entry key="app/src/main/res/layout/ble_caracteristic.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/ble_characteristic.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/fragment_item.xml" value="0.12314814814814815" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.12314814814814815" />
         <entry key="app/src/main/res/layout/fragment_picture.xml" value="0.3098958333333333" />

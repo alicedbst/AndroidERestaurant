@@ -1,8 +1,5 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
-    <string name="bienvenue">Bienvenue</string>
-    <string name="chez">chez</string>
-    <string name="resto_name">Droid Resto</string>
+    <string name="app_name">AliceAndroidERestaurant</string>
 
     <string name="entrée">Entrées</string>
     <string name="plat">Plats</string>
@@ -16,8 +13,7 @@
     <string-array name="Plats">
 
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
     <string name="plus">+</string>
     <string name="moins">-</string>
@@ -27,7 +23,11 @@
     <string name="ble_scan_play">Lancer le scan</string>
     <string name="ble_scan_pause">Scan BLE en cours …</string>
     <string name="ble_scan_error">Erreur Scan BLE</string>
-    <string name="ble_device_disconnected">"Statut : déconnecté "</string>
+    <string name="ble_device_disconnected">Statut : déconnecté</string>
     <string name="ble_device_connnected">Statut : connecté</string>
-    ble_scan_error
+    <string name="ble_device_write_characteristic_title">Caractéristique :</string>
+    <string name="ble_device_write_characteristic_confirm">Confirmation</string>
+    <string name="ble_device_write_characteristic_cancel">Annulation</string>
+
+
 </resources>

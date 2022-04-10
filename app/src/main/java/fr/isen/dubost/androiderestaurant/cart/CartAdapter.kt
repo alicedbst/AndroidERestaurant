@@ -43,7 +43,6 @@ class CartAdapter(
             onClickListener.onClick(item)
         }
         //holder.com.text=context.getString(R.string.com, item.com)
-//,item.com
 
     }
     override fun getItemCount(): Int {

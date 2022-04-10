@@ -42,6 +42,7 @@ class CartActivity : AppCompatActivity() {
         cartAdapter = CartAdapter(itemsList, CartAdapter.OnClickListener { item ->
             onListCartClickDelete(item)
         },this@CartActivity)
+
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerPanier.layoutManager = layoutManager
         recyclerPanier.adapter = cartAdapter

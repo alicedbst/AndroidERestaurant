@@ -1,23 +1,37 @@
 package fr.isen.dubost.androiderestaurant
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import fr.isen.dubost.androiderestaurant.cart.Cart
+import fr.isen.dubost.androiderestaurant.cart.CartActivity
+import fr.isen.dubost.androiderestaurant.cart.LinesCart
 import fr.isen.dubost.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.dubost.androiderestaurant.model.Item
+import java.io.File
+import java.net.URI.create
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     lateinit var item: Item
+    private lateinit var cart: Cart
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        sharedPreferences = getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE)
 
 
         item = intent.getSerializableExtra(CategoryActivity.ITEM_KEY) as Item
@@ -46,16 +60,52 @@ class DetailActivity : AppCompatActivity() {
              binding.detailTotal.text = (item.prices[0].price.toInt()*cnt).toString()+ " €"
         }
 
-        binding.buttonAjouter.setOnClickListener {
+
+        val dish = intent.getSerializableExtra("dish") as Item
+        binding.buttonAjouter.setOnClickListener{
+            Snackbar.make(binding.root, "Votre plat a bien été ajouté à votre panier.", Snackbar.LENGTH_LONG).show()
+            saveInBasket(cnt, dish)
 
         }
 
-
-
-
         var actionBar = supportActionBar
         actionBar!!.title = item.name_fr
-        //actionBar.setDisplayHomeAsUpEnabled(true)
+    }
+
+
+    private fun saveInBasket(quantity: Int, item: Item) {
+        val jsonFile = File(cacheDir.absolutePath + BASKET_FILE)
+
+        if (jsonFile.exists()) {
+            val dataJson = jsonFile.readText()
+            if (dataJson.isNotEmpty()) {
+                val basket = GsonBuilder().create().fromJson(dataJson, Cart::class.java)
+                updateOrCreateBasket(basket, quantity, item)
+            } else {
+                updateOrCreateBasket(null, quantity, item)
+            }
+        } else {
+            updateOrCreateBasket(null, quantity, item)
+        }
+    }
+
+    private fun updateOrCreateBasket(cart: Cart?, quantity: Int, item: Item) {
+        val newCart = cart ?: Cart(mutableListOf())
+        newCart.lines.add(LinesCart(quantity, item))
+
+        saveDishCountInPref(newCart)
+
+        File(cacheDir.absolutePath + BASKET_FILE).writeText(
+            GsonBuilder().create().toJson(newCart)
+        )
+        invalidateOptionsMenu()
+    }
+
+    private fun saveDishCountInPref(cart: Cart) {
+        val count = cart.lines.sumOf { it.quantite }
+        val editor = sharedPreferences.edit()
+        editor.putInt(BASKET_COUNT, count)
+        editor.apply()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -66,5 +116,11 @@ class DetailActivity : AppCompatActivity() {
         val intent = Intent(this, CartActivity::class.java)
         startActivity(intent)
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val APP_PREFS = "app_prefs"
+        const val BASKET_FILE = "basket.json"
+        const val BASKET_COUNT = "basket_count"
     }
 }

@@ -1,42 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin= "18dp"
-    android:orientation="vertical">
+    android:layout_margin="18dp"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
 
-
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/categoryTitle"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/itemImage"
-        android:textColor="#2E2C2B"
-        android:textSize="20sp" />
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/categoryPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#03989E"
-        android:layout_below="@+id/categoryTitle"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/itemImage"
-        android:layout_marginLeft="20dp"
-        />
+        <TextView
+            android:id="@+id/nameItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toRightOf="@id/imageCart"
+            android:textColor="@color/brown"
+            android:textSize="22sp"
+            tools:text=" Nom du plat" />
 
-    <ImageView
-        android:id="@+id/itemImage"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        tools:srcCompat="@tools:sample/avatars" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toRightOf="@id/imageCart"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            tools:text="Quantité" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginStart="220dp"
+            android:layout_marginLeft="239dp"
+            android:layout_marginTop="-28dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toRightOf="@id/imageCart"
+            android:text="@string/sup"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="139dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toRightOf="@id/imageCart"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            tools:text="price" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/imageCart"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:clickable="false"
+            android:tooltipText="@string/app_name" />
+        <TextView
+            android:id="@+id/commentaire_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"/>
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -12,35 +12,34 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        >
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/platName"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/rssiView"
             android:layout_marginStart="46dp"
             android:layout_marginEnd="10dp"
+            android:layout_toRightOf="@id/imageCart"
             android:text="Nom"
             android:textColor="@color/brown"
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/adress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/platName"
+            android:layout_below="@id/name"
             android:layout_marginStart="46dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_toRightOf="@id/rssiView"
-            android:text="Addresse"
+            android:layout_toRightOf="@id/imageCart"
+            android:text="Address"
             android:textColor="@color/green"
             android:textSize="20sp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/rssiView"
+            android:id="@+id/imageCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"

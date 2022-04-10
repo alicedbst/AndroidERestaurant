@@ -29,5 +29,17 @@
     <string name="ble_device_write_characteristic_confirm">Confirmation</string>
     <string name="ble_device_write_characteristic_cancel">Annulation</string>
 
+    <string name="commander">Commander</string>
+    <string name="price">Prix</string>
+    <string name="total">Total</string>
+
+    <string name="euro">€</string>
+    <string name="com">com</string>
+
+    <string name="sup">X</string>
+    <string name="quantity">Quantité</string>
+
+
+
 
 </resources>

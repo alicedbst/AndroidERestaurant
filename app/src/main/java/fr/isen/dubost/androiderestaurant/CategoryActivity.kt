@@ -1,6 +1,5 @@
 package fr.isen.dubost.androiderestaurant
 
-import android.app.DownloadManager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,17 +7,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
+import fr.isen.dubost.androiderestaurant.cart.CartActivity
 import fr.isen.dubost.androiderestaurant.databinding.ActivityCategoryBinding
-import fr.isen.dubost.androiderestaurant.databinding.ActivityHomeBinding
 import fr.isen.dubost.androiderestaurant.model.DataResult
 import org.json.JSONObject
-import java.util.Arrays.toString
 
 class CategoryActivity : AppCompatActivity() {
 

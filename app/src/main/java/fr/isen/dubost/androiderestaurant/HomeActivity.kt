@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.Toast
-import androidx.annotation.StringRes
 import fr.isen.dubost.androiderestaurant.ble.BleScanActivity
+import fr.isen.dubost.androiderestaurant.cart.CartActivity
 import fr.isen.dubost.androiderestaurant.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

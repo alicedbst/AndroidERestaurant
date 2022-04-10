@@ -19,9 +19,9 @@ import fr.isen.dubost.androiderestaurant.R
 
 class BleAdapter(private val bleliste: ArrayList<ScanResult>,val clickListener : (BluetoothDevice) -> (Unit)) : RecyclerView.Adapter<BleAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textNom : TextView = itemView.findViewById(R.id.platName)
-        val textAddresse : TextView = itemView.findViewById(R.id.price)
-        val rssi : FloatingActionButton = itemView.findViewById(R.id.rssiView)
+        val textNom : TextView = itemView.findViewById(R.id.name)
+        val textAddresse : TextView = itemView.findViewById(R.id.adress)
+        val rssi : FloatingActionButton = itemView.findViewById(R.id.imageCart)
 
     }
 

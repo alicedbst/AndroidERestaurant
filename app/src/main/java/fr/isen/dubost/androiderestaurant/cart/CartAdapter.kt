@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import fr.isen.dubost.androiderestaurant.R
 import fr.isen.dubost.androiderestaurant.databinding.ItemCartBinding
 
 
 class CartAdapter(
     private var itemsList: MutableList<LinesCart>,
-    private val onClickListener: OnClickListener,
+    private val onClickListener:OnClickListener,
     private val context: Context
+
     ): RecyclerView.Adapter<CartAdapter.MyViewHolder>(){
 
     private lateinit var binding: ItemCartBinding

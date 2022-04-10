@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import fr.isen.dubost.androiderestaurant.DetailActivity
 import fr.isen.dubost.androiderestaurant.HomeActivity
 import fr.isen.dubost.androiderestaurant.R
 import fr.isen.dubost.androiderestaurant.databinding.ActivityCartBinding
@@ -88,7 +89,8 @@ class CartActivity : AppCompatActivity() {
     private fun readCart(): Cart {
         //lecture fichier panier
         val filename = "panier.json"
-        val file = File(binding.root.context.filesDir, filename)
+        //val file = File(binding.root.context.filesDir, filename)
+        val file = File(cacheDir.absolutePath + DetailActivity.BASKET_FILE)
         if(file.exists()){
             val contents = file.readText()
             return Gson().fromJson(contents, Cart::class.java)

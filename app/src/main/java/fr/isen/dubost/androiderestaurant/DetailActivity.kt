@@ -61,10 +61,12 @@ class DetailActivity : AppCompatActivity() {
         }
 
 
-        val dish = intent.getSerializableExtra("dish") as Item
+        val plat = intent.getSerializableExtra("item") as Item
+        binding.detailTitle.text = plat.name_fr
+
         binding.buttonAjouter.setOnClickListener{
-            Snackbar.make(binding.root, "Votre plat a bien été ajouté à votre panier.", Snackbar.LENGTH_LONG).show()
-            saveInBasket(cnt, dish)
+            Snackbar.make(binding.root, "Votre plat a été ajouté au panier.", Snackbar.LENGTH_LONG).show()
+            saveInBasket(cnt, plat)
 
         }
 

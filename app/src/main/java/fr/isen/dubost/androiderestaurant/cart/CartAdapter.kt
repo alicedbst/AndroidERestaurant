@@ -27,6 +27,7 @@ class CartAdapter(
         val btnDelete = binding.delete
         val com = binding.commentaireText
 
+
     }
 
     @NonNull
